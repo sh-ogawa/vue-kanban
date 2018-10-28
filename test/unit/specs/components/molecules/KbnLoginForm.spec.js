@@ -30,7 +30,7 @@ describe('KbnLoginForm', () => {
           describe('メールアドレス形式ではない', () => {
             it('validation.email.formatがinvalidであること', () => {
               loginForm.setData({ email: 'foobar' })
-              expect(loginForm.vm.validation.format.required).to.equal(false)
+              expect(loginForm.vm.validation.email.format).to.equal(false)
             })
           })
           describe('メールアドレス形式', () => {
@@ -45,13 +45,13 @@ describe('KbnLoginForm', () => {
         describe('required', () => {
           describe('何も入力されていないこと', () => {
             it('validation.password.requiredがinvalidであること', () => {
-              loginForm.setData({ email: '' })
+              loginForm.setData({ password: '' })
               expect(loginForm.vm.validation.password.required).to.equal(false)
             })
           })
           describe('入力あり', () => {
             it('validation.password.requiredがvalidであること', () => {
-              loginForm.setData({ email: 'hoge1' })
+              loginForm.setData({ password: 'hoge1' })
               expect(loginForm.vm.validation.password.required).to.equal(true)
             })
           })
