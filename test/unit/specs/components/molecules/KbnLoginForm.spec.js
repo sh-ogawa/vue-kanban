@@ -139,7 +139,7 @@ describe('KbnLoginForm', () => {
       describe('resolve', () => {
         it('resolveされること', done => {
           onloginStub.resolves()
-
+          console.log(loginForm)
           loginForm.find('button').trigger('click')
           expect(onloginStub.called).to.equal(false)
           expect(loginForm.vm.error).to.equal('')

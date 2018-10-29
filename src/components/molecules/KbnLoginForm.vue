@@ -68,23 +68,23 @@ export default {
           required: required(this.password)
         }
       }
-    }
-  },
-  valid () {
-    const validation = this.validation
-    const fields = Object.keys(validation)
-    let valid = true
-    for (let i = 0; i < fields.length; i++) {
-      const field = fields[i]
-      valid = Object.keys(validation[field]).every(key => validation[field][key])
-      if (!valid) {
-        break
+    },
+    valid () {
+      const validation = this.validation
+      const fields = Object.keys(validation)
+      let valid = true
+      for (let i = 0; i < fields.length; i++) {
+        const field = fields[i]
+        valid = Object.keys(validation[field]).every(key => validation[field][key])
+        if (!valid) {
+          break
+        }
       }
+      return valid
+    },
+    disableLoginAction () {
+      return !this.valid || this.progress
     }
-    return valid
-  },
-  disableLoginAction () {
-    return !this.valid || this.progress
   },
   methods: {
     resetError () {
