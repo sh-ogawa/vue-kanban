@@ -162,12 +162,10 @@ describe('KbnLoginForm', () => {
         it('リジェクトされること', done => {
           onloginStub.rejects(new Error('login error'))
 
-
           loginForm.find('button').trigger('click')
           expect(onloginStub.called).to.equal(false)
           expect(loginForm.vm.error).to.equal('')
           expect(loginForm.vm.disableLoginAction).to.equal(true)
-
 
           loginForm.vm.$nextTick(() => {
             expect(onloginStub.called).to.equal(true)
@@ -175,7 +173,7 @@ describe('KbnLoginForm', () => {
             expect(authInfo.email).to.equal(loginForm.vm.email)
             expect(authInfo.password).to.equal(loginForm.vm.password)
             loginForm.vm.$nextTick(() => {
-              expect(loginForm.vm.error).to.equal('login error!')
+              expect(loginForm.vm.error).to.equal('login error')
               expect(loginForm.vm.disableLoginAction).to.equal(false)
               done()
             })
