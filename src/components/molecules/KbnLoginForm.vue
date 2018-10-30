@@ -1,4 +1,4 @@
-<temlate>
+<template>
   <form novalidate>
     <div class="form-item">
       <label for="email">メールアドレス</label>
@@ -13,7 +13,9 @@
       <label for="password">パスワード</label>
       <input id="password" v-model="password" type="password" autocomplete="off"
              placeholder="例：xxxxxxx" @focus="resetError">
-      <li v-if="!validation.password.required">パスワードが入力されていません。</li>
+      <ul class="validation-errors">
+        <li v-if="!validation.password.required">パスワードが入力されていません。</li>
+      </ul>
     </div>
     <div class="form-actions">
       <KbnButton
@@ -29,7 +31,7 @@
       </p>
     </div>
   </form>
-</temlate>
+</template>
 
 <script>
 import KbnButton from '@/components/atoms/KbnButton'
