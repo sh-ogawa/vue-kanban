@@ -80,6 +80,7 @@ describe('KbnLoginView', () => {
       })
 
       it('エラー処理が呼び出されること', done => {
+
         const message = 'login failed'
         actions.login.rejects(new Error(message))
 
@@ -88,7 +89,7 @@ describe('KbnLoginView', () => {
         loginView.vm.$nextTick(() => {
           const callInfo = loginView.vm.throwReject
           expect(callInfo.called).to.equal(true)
-          expect(callInfo.called[0][0].path).to.equal(message)
+          expect(callInfo.args[0][0].message).to.equal(message)
           done()
         })
       })
