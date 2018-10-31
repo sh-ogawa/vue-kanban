@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import * as from '@/store/mutation-types'
+import * as types from '@/store/mutation-types'
 
 const mockLoginAction = login => {
   const actionsInjector = require('inject-loader!@/store/actions')
