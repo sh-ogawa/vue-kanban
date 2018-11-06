@@ -2,8 +2,13 @@
   <form novalidate>
     <div class="form-item">
       <label for="email">メールアドレス</label>
-      <input id="email" v-model="email" type="text" autocomplete="off"
-             placeholder="例：kanban@domain.com" @focus="resetError">
+      <input
+        id="email"
+        v-model="email"
+        type="text"
+        autocomplete="off"
+        placeholder="例：kanban@domain.com"
+        @focus="resetError">
       <ul class="validation-errors">
         <li v-if="!validation.email.format">メールアドレスの形式が不正です。</li>
         <li v-if="!validation.email.required">メールアドレスが入力されていません。</li>
@@ -11,8 +16,13 @@
     </div>
     <div class="form-items">
       <label for="password">パスワード</label>
-      <input id="password" v-model="password" type="password" autocomplete="off"
-             placeholder="例：xxxxxxx" @focus="resetError">
+      <input
+        id="password"
+        v-model="password"
+        type="password"
+        autocomplete="off"
+        placeholder="例：xxxxxxx"
+        @focus="resetError">
       <ul class="validation-errors">
         <li v-if="!validation.password.required">パスワードが入力されていません。</li>
       </ul>
@@ -23,10 +33,14 @@
         @click="handleClick">
         ログイン
       </KbnButton>
-      <p v-if="progress" class="login-progress">
+      <p
+        v-if="progress"
+        class="login-progress">
         ログイン中
       </p>
-      <p v-if="error" class="login-error">
+      <p
+        v-if="error"
+        class="login-error">
         {{ error }}
       </p>
     </div>
