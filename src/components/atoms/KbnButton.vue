@@ -2,7 +2,7 @@
   <button
     :class="classes"
     :disabled="disabled"
-    :type="button"
+    type="button"
     @click="handleClick"
   >
     <slot />
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style scoped>
-  .kb-button {
+  .kbn-button {
     padding: .6em 1.3em;
   }
   .kbn-button-text {
