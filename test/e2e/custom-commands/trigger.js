@@ -1,6 +1,6 @@
-exports.commands = function (selector, event, keyCode) {
+exports.command = function (selector, event, keyCode) {
   return this.execute(function (selector, event, keyCode) {
-    let e = document.createElement('HTMLEvents')
+    var e = document.createEvent('HTMLEvents')
     e.initEvent(event, true, true)
     if (keyCode) {
       e.keyCode = keyCode
